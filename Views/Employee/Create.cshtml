@@ -5,14 +5,16 @@
 }
 
 <form asp-action="CreateEmployee" asp-controller="Employee" method="post">
+<div class="row">
+    <div class="col-md-6">
     <div class="form-group">
-        <label>Id</label>
-        <input asp-for="Id" type="text" class="form-control" required>
+        <label>ID</label>
+        <input asp-for="Id" type="text" class="form-control" style="width: 10cm;" required>
     </div>
 
     <div class="form-group">
         <label>Initails</label>
-        <input asp-for="Initials" type="text" class="form-control" required>
+        <input asp-for="Initials" type="text" class="form-control" style="width: 10cm;" required>
     </div>
     
     <div class="form-group">
@@ -23,26 +25,32 @@
         <label>Surname</label>
         <input asp-for="Surname" type="text" class="form-control" required>
     </div>
+    </div>
+    <div class="col-md-6">
     <div class="form-group">
-        <label>Address 1</label>
-        <input asp-for="Address1" type="text" class="form-control" required>
+        <label>Address Line 1</label>
+        <input asp-for="Address1" type="text" class="form-control"style="height: 2.5cm; width: 9cm;" required>
     </div>
 
     <div class="form-group">
-        <label>Address 2</label>
-        <input asp-for="Address2" type="text" class="form-control" required>
+        <label>Address Line 2</label>
+        <input asp-for="Address2" type="text" class="form-control" style="height: 2.5cm; width: 9cm;" required>
     </div>
-
-
 
     <div class="form-group">
         <label>DOB</label>
+<<<<<<< Updated upstream
         <input asp-for="DOB" type="text" class="form-control" required>
+=======
+        <input asp-for="DOB" type="date" class="form-control" style="width: 5cm;" required>
+>>>>>>> Stashed changes
     </div>
     <div class="form-group">
         <label>Status</label>
         <input asp-for="Status" type="text" class="form-control" required>
     </div>
+    </div>
+</div>
 
     <div class="card-footer">
         <center>
@@ -50,4 +58,5 @@
             <a asp-action="Index" asp-controller="Employee" class="btn btn-secondary">Go Back</a>
         </center>
     </div>
+    
 </form>

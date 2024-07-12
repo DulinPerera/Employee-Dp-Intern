@@ -4,43 +4,43 @@
     ViewData["Title"] = "Edit Employee";
 }
 
-<form asp-action="Edit" asp-controller="Employee" method="post">
+<form asp-action="Delete" asp-controller="Employee" method="post">
     <input type="hidden" asp-for="Id">
     <div class="form-group">
         <label>Id</label>
-        <input asp-for="Id" type="text" class="form-control" required>
+        <input asp-for="Id" type="text" class="form-control" disabled required>
     </div>
 
     <div class="form-group">
         <label>Initails</label>
-        <input asp-for="Initials" type="text" class="form-control" required>
+        <input asp-for="Initials" type="text" disabled class="form-control" disabled required>
     </div>
     
     <div class="form-group">
         <label>First Name</label>
-        <input asp-for="FirstName" type="text" class="form-control" size="50" required>
+        <input asp-for="FirstName" disabled type="text" class="form-control" size="50" disabled required>
     </div>
     <div class="form-group">
         <label>Surname</label>
-        <input asp-for="Surname" type="text" class="form-control" size="50" required>
+        <input asp-for="Surname" type="text" class="form-control" size="50" required disabled>
     </div>
     <div class="form-group">
         <label>Address 1</label>
-        <input asp-for="Address1" type="text" class="form-control" size="100" required>
+        <input asp-for="Address1" type="text" class="form-control" size="100" disabled required>
     </div>
 
     <div class="form-group">
         <label>Address 2</label>
-        <input asp-for="Address2" type="text" class="form-control" size="100" required>
+        <input asp-for="Address2" type="text" class="form-control" disabled size="100" required>
     </div>
 
     <div class="form-group">
         <label>DOB</label>
-        <input asp-for="DOB" type="date" class="form-control" required>
+        <input asp-for="DOB" type="date" class="form-control" disabled required>
     </div>
     <div class="form-group">
         <label >Status:</label>
-        <select asp-for="Status" id="status" name="status" class="form-control" required>
+        <select asp-for="Status" id="status" name="status" class="form-control" disabled required>
             <option value="Active">Active</option>
             <option value="Inactive">Inactive</option>
         </select>
@@ -48,7 +48,7 @@
 
     <div class="card-footer">
         <center>
-            <button type="submit" class="btn btn-warning">Update Details</button>
+            <button type="submit" class="btn btn-warning">Delete Details</button>
             <a asp-action="Index" asp-controller="Employee" class="btn btn-secondary">View Details</a>
         </center>
     </div>

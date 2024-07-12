@@ -8,7 +8,6 @@ namespace Employee.Controllers
     public class EmployeeController : Controller
     {
         private readonly ApplicationDbContext _db;
-
         public EmployeeController(ApplicationDbContext db)
         {
             _db = db;
@@ -57,9 +56,29 @@ namespace Employee.Controllers
             }
             return View(employee);
         }
- 
 
+        
+        [HttpGet]
+        public async Task<IActionResult> Delete(int id)
+        {
+            var employee = await _db.Employees.FirstOrDefaultAsync(x => x.Id == id);
+            if (employee == null)
+            {
+                return NotFound();
+            }
+            return View(employee);
+        }
 
-
+        [HttpPost, ActionName("Delete")]
+        public async Task<IActionResult> DeleteConfirmed(int id)
+        {
+            var employee = await _db.Employees.FindAsync(id);
+            if (employee != null)
+            {
+                _db.Employees.Remove(employee);
+                await _db.SaveChangesAsync();
+            }
+            return RedirectToAction(nameof(Index));
+        }
     }
-    }
+}

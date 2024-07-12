@@ -2,13 +2,12 @@ using Employee.Data;
 
 using Microsoft.EntityFrameworkCore;
 
-
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllersWithViews();
 
-builder.Services.
-AddDbContext<ApplicationDbContext>(Options => Options.UseMySQL(builder.Configuration.GetConnectionString("DefaultConnection")) );
+var connString = builder.Configuration.GetConnectionString("DefaultConnection");
+builder.Services.AddDbContext<ApplicationDbContext>(Options => Options.UseMySQL(connString));
 
 var app = builder.Build();
 

@@ -6,7 +6,7 @@ using MySql.EntityFrameworkCore.Metadata;
 namespace Employee.Migrations
 {
     /// <inheritdoc />
-    public partial class InialDBSetup : Migration
+    public partial class InitailDBSetup : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)

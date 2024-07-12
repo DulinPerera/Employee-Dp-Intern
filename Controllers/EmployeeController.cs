@@ -23,6 +23,8 @@ namespace Employee.Controllers
             return View();
         }
 
+       
+
         [HttpPost]
             public IActionResult CreateEmployee(EmployeesEntity employee){
         _db.Employees.Add(employee);

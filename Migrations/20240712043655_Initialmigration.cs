@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore.Migrations;
+﻿using System;
+using Microsoft.EntityFrameworkCore.Migrations;
 using MySql.EntityFrameworkCore.Metadata;
 
 #nullable disable
@@ -6,7 +7,7 @@ using MySql.EntityFrameworkCore.Metadata;
 namespace Employee.Migrations
 {
     /// <inheritdoc />
-    public partial class InialDBSetup : Migration
+    public partial class Initialmigration : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -25,7 +26,7 @@ namespace Employee.Migrations
                     Surname = table.Column<string>(type: "longtext", nullable: false),
                     Address1 = table.Column<string>(type: "longtext", nullable: false),
                     Address2 = table.Column<string>(type: "longtext", nullable: false),
-                    DOB = table.Column<string>(type: "longtext", nullable: false),
+                    DOB = table.Column<DateTime>(type: "datetime(6)", nullable: false),
                     Status = table.Column<string>(type: "longtext", nullable: false)
                 },
                 constraints: table =>

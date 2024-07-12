@@ -2,7 +2,6 @@ using Employee.Data;
 
 using Microsoft.EntityFrameworkCore;
 
-<<<<<<< HEAD
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllersWithViews();
@@ -10,16 +9,6 @@ builder.Services.AddControllersWithViews();
 var connString = builder.Configuration.GetConnectionString("DefaultConnection");
 builder.Services.AddDbContext<ApplicationDbContext>(Options => Options.UseMySQL(connString));
 
-=======
-
-var builder = WebApplication.CreateBuilder(args);
-
-builder.Services.AddControllersWithViews();
-
-builder.Services.
-AddDbContext<ApplicationDbContext>(Options => Options.UseMySQL(builder.Configuration.GetConnectionString("DefaultConnection")) );
-
->>>>>>> ae8cd0f98d5b7dd89cf8adc2ebd9ac2ff7a10ea7
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

@@ -3,7 +3,7 @@
 }
 <div class="row">
     <div class="col-md-12">
-        <a asp-action="Create" asp-controller="Employee" class="btn btn-sucess">Fill Form</a>
+        <a asp-action="Create" asp-controller="Employee" class="btn btn-sucess">Fill Employee</a>
     </div>
 </div>
 
@@ -18,6 +18,7 @@
       <th scope="col">Address2 </th> 
       <th scope="col">DB</th> 
       <th scope="col">Status</th> 
+      <th>Manage</th>
   </thead>
             <tbody>
                 @foreach(var item in Model){
@@ -30,8 +31,12 @@
                     <td>@item.Address2</td>
                     <td>@item.DOB</td>
                     <td>@item.Status</td>
+                    <td>
+                    <a asp-action="Edit" asp-controller="Employee" asp-route-id="@item.Id">Edit</a>
+                    <a asp-action="Delete" asp-controller="Employee" asp-route-id="@item.Id">Delete</a>
+                    </td>
+
                 </tr>
                 }
             </tbody>
 </table>
-

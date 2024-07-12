@@ -1,18 +1,14 @@
-using Employee.Models;
 using Employee.Data;
 using Microsoft.EntityFrameworkCore;
 
-
-
-
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.
-AddDbContext<ApplicationDbContext>(Options => Options.UseMySQL(builder.Configuration.GetConnectionString("DefaultConnection")) );
+builder.Services.AddControllersWithViews();
 
+var connString = builder.Configuration.GetConnectionString("DefaultConnection");
+builder.Services.AddDbContext<ApplicationDbContext>(Options => Options.UseMySQL(connString));
 
 var app = builder.Build();
-
 
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
